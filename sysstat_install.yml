@@ -1,0 +1,12 @@
+---
+- name: This sets up sysstat
+  hosts: all
+  tasks:
+  - name: Install sysstat packages
+    yum:
+      name: sysstat
+      state: present
+  - name: ensure sysstat is running
+    service:
+      name: sysstat
+      state: started
